@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  color: rgb(252, 249, 249);
-  background-color: rgba(255, 60, 0, 0.803);
+  align-items: left;
+  color: rgb(255, 60, 0);
 }
 h1 {
   font-size: 3rem;
 }
 h2 {
   font-size: 2rem;
+  
 }

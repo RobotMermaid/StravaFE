@@ -1,0 +1,32 @@
+.Links {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+  margin-right: 2rem;
+  color: #fc5200;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: right;
+  padding: 0 1rem 0 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: rgb(16, 147, 27);
+  text-decoration: none;
+}
+.link:hover {
+  color: #fc5200;
+}
+.link:focus {
+  color: #fc5200;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}

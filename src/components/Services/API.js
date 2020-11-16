@@ -1,3 +1,13 @@
+export const rateShoe = shoe => {
+  return fetch('https://salty-cliffs-60245.herokuapp.com/rateshoe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(shoe)
+  })
+    .then(res => res.json());
+};
 export const getAllRatings = () => {
   return fetch('https://salty-cliffs-60245.herokuapp.com/')
   .then(res => res.json())
