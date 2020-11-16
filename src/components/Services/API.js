@@ -21,7 +21,7 @@ export const getTopRecommendedShoes = () => {
   .then(res => res.json())
   .then(json => json.map(shoe => ({
     id: shoe.id,
-    avg_stars: shoe.avg_stars,
+    avg_stars: shoe.avg_stars.toFixed(2),
     shoes_id: shoe.shoes_id,
     model: shoe.model,
     terrain: shoe.terrain,

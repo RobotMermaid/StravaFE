@@ -1,0 +1,8 @@
+.shoes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+li {
+  list-style-type: none;
+}
