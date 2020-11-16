@@ -58,7 +58,6 @@ const Rating = () => {
   return (
     <div className={styles.Rating}>
       <h1>Rate a shoe</h1>
-      <h2>Shoe Rating and Recommendations</h2>
       <form>
       <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
       <div>

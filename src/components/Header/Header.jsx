@@ -6,8 +6,8 @@ const Header = () => {
   return (
     
     <div className={styles.Header}>
-      <h1>STRAVA</h1>
-      <h2>Shoe Rating and Recommendations</h2>
+      <h1 className={styles.h1}>STRAVA</h1>
+      {/* <h2>Shoe Rating and Recommendations</h2> */}
       <Links/>
     </div>
     
