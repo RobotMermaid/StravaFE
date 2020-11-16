@@ -10,7 +10,6 @@ export default function App() {
     <>
     <BrowserRouter>
       <Header/>
-      {/* <Links/> */}
         <Switch>
           <Route exact path="/" component={Rating}/>
           <Route exact path="/rec" component={Recommendation}/>

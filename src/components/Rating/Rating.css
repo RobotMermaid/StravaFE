@@ -20,7 +20,12 @@ h2 {
 .stars {
   color: rgb(255, 60, 0);
 }
-
+.rated {
+  visibility: visible;
+}
+.notRated {
+  visibility: hidden;
+}
 .button {
   color: rgb(250, 248, 248);
   cursor: pointer;

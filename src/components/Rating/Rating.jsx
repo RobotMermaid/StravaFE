@@ -18,7 +18,7 @@ const Rating = () => {
 
   const [stars, setStars] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
-
+  const [rated, setRated] = useState(false);
   const options = [
     'Shoe 1',
     'Shoe 2',
@@ -40,6 +40,7 @@ const Rating = () => {
 
   const saveRating = () => {
     rateShoe({ athleteID, shoeID, stars})
+    setRated(!rated)
     console.log(stars, shoeID, athleteID)
   }
   const labels = {
@@ -108,6 +109,7 @@ const Rating = () => {
     </div>
       <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button>
     </form>
+      <h3 className={rated ? styles.rated : styles.notRated }>Thank you for rating {options[selectedIndex]}</h3>
     </div>
   );
 };
