@@ -7,10 +7,12 @@ import { getAthleteRecommendedShoe } from '../Services/API';
 const Recommendation = () => {
   const [athleteID, setAthleteID] = useState(null);
   const [recShoe, setRecShoe] = useState([]);
+  const [rec, setRec] = useState(false);
 
   const getRecommendation = (e) => {
     getAthleteRecommendedShoe(athleteID)
     .then(shoe => setRecShoe(shoe));
+    setRec(!rec);
     console.log(athleteID)
   }
   return (
@@ -22,7 +24,10 @@ const Recommendation = () => {
         <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
         <button className={styles.button} onClick={(e) => {e.preventDefault(); getRecommendation()}}>Get your Recommended Shoe</button>
       </form>
-      <ShoeDetail {...recShoe}/>
+      <div className={rec ? styles.rec : styles.notRec }>
+        <h2>Here is your recommended shoe</h2>
+        <ShoeDetail {...recShoe}/>
+      </div>
     </div>
   );
 };

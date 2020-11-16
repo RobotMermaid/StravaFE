@@ -57,10 +57,10 @@ const Rating = () => {
   };
   return (
     <div className={styles.Rating}>
-      <h1>Rate a shoe</h1>
+      <h1 className={styles.h1}>Rate a shoe</h1>
       <form>
       <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
-      <div>
+      <div className={styles.inputs}>
         <List component="nav" aria-label="Shoes">
         <ListItem
           button
@@ -106,8 +106,9 @@ const Rating = () => {
       />
       {stars !== null && <Box ml={2}>{labels[hover !== -1 ? hover : stars]}</Box>}
     </div>
-      <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button>
+      {/* <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button> */}
     </form>
+    <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button>
       <h3 className={rated ? styles.rated : styles.notRated }>Thank you for rating {options[selectedIndex]}</h3>
     </div>
   );

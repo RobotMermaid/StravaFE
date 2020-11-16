@@ -10,7 +10,9 @@ h1 {
   font-size: 1.5rem;
   color: rgb(255, 60, 0);
 }
-
+h2 {
+  font-size: 1.25rem;
+}
 .button {
   color: rgb(250, 248, 248);
   cursor: pointer;
@@ -18,10 +20,16 @@ h1 {
   background-color: rgb(255, 60, 0);
   border-radius: 0.5rem;
   border-color: white;
-  margin-top: 1rem;
+  margin: 1rem 0 1rem 1rem;
   padding: 0.25rem 0.3rem 0.25rem 0.3rem;
 }
 .button:hover {
   background-color: rgb(8, 8, 8);
 
+}
+.rec {
+  visibility: visible;
+}
+.notRec {
+  visibility: hidden;
 }
