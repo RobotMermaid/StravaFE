@@ -59,7 +59,8 @@ const Rating = () => {
     <div className={styles.Rating}>
       <h1 className={styles.h1}>Rate a shoe</h1>
       <form>
-      <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
+      <input data-testid="athleteID"
+      type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
       <div className={styles.inputs}>
         <List component="nav" aria-label="Shoes">
         <ListItem

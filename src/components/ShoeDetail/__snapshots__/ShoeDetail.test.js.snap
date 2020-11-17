@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shoe Detail component renders Shoe Detail 1`] = `
+<DocumentFragment>
+  <section>
+    <h3 />
+    <p>
+      Best for: 
+    </p>
+    <p>
+      Rating:  stars
+    </p>
+    <p>
+      Durable for up to  miles
+    </p>
+  </section>
+</DocumentFragment>
+`;
