@@ -25,7 +25,9 @@ export const getTopRecommendedShoes = () => {
     shoes_id: shoe.shoes_id,
     model: shoe.model,
     terrain: shoe.terrain,
-    durable_miles: shoe.durable_miles
+    durable_miles: shoe.durable_miles,
+    img_src: shoe.model
+
   })));
 }
 export const getAthleteRecommendedShoe = (athlete_id) => {
@@ -37,7 +39,8 @@ export const getAthleteRecommendedShoe = (athlete_id) => {
     shoes_id: shoe.shoes_id,
     model: shoe.model,
     terrain: shoe.terrain,
-    durable_miles: shoe.durable_miles
+    durable_miles: shoe.durable_miles,
+    img_src: shoe.model
   })));
 };
 export const getRecShoe = (shoe_id) => {
