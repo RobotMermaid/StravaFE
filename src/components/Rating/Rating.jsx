@@ -9,6 +9,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { rateShoe } from '../Services/API';
+import img from '../../Assets/salomon_supercross.png';
+import findShoeImg from '../Services/shoeImg';
 
 const Rating = () => {
   const [athleteID, setAthleteID] = useState(null);
@@ -19,11 +21,16 @@ const Rating = () => {
   const [stars, setStars] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
   const [rated, setRated] = useState(false);
+  // let img = findShoeImg(options[selectedIndex]);
+let img;
   const options = [
-    'Shoe 1',
-    'Shoe 2',
-    'Shoe 3',
-    'Shoe 4',
+    'Nike Zoom',
+    'Altra Lone Peak',
+    'Brooks Ghost',
+    'Salomon Supercross',
+    'Brooks Cascadia',
+    'Salomon Ultra Pro',
+    'Nike Pegasus'
   ];
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
@@ -34,6 +41,8 @@ const Rating = () => {
     setSelectedIndex(index);
     setAnchorEl(null);
   };
+  img = findShoeImg(options[selectedIndex]);
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -58,10 +67,12 @@ const Rating = () => {
   return (
     <div className={styles.Rating}>
       <h1 className={styles.h1}>Rate a shoe</h1>
+      <p>For testing use Athlete Id of 1, 2 or 3</p>
       <form>
       <input data-testid="athleteID"
       type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
       <div className={styles.inputs}>
+      <img src={img} />
         <List component="nav" aria-label="Shoes">
         <ListItem
           button

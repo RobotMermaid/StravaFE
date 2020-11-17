@@ -19,6 +19,11 @@ form {
 h2 {
   font-size: 1.5rem;
 }
+p {
+  font-size: 1rem;
+  color: rgb(15, 128, 24);
+  font-style: italic;
+}
 .inputs {
   padding: 1rem;
 }
