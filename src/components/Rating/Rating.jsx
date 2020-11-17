@@ -39,7 +39,7 @@ const Rating = () => {
   };
 
   const saveRating = () => {
-    rateShoe({ athleteID, shoeID, stars})
+    rateShoe({athleteID, shoeID, stars})
     setRated(!rated)
     console.log(stars, shoeID, athleteID)
   }

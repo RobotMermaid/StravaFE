@@ -11,6 +11,7 @@ const List = () => {
     getTopRecommendedShoes()
       .then(res => setShoes(res));
   }, []);
+  
   let top3Shoes = shoes.slice(0,3);
   
   const shoesList = top3Shoes.map(shoe => 
