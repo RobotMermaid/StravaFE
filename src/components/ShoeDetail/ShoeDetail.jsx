@@ -9,9 +9,9 @@ const RecShoe = ({ model, terrain, durable_miles, avg_stars, shoes_id }) =>  {
     <h3>{terrain}</h3>
     {/* <img src={image} /> */}
     <p>Best for: {model}</p>
-    <p>{shoes_id}</p>
+    {/* <p>{shoes_id}</p> */}
     <p>Rating: {avg_stars} stars</p>
-    <p>Durable for mileage up to: {durable_miles} mi</p>
+    <p>Durable for up to {durable_miles} miles</p>
   </section>
 )};
 

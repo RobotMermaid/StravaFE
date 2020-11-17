@@ -7,11 +7,24 @@
   //background-color: rgba(255, 60, 0, 0.803);
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: rgb(255, 60, 0);
 }
 h2 {
   font-size: 1.25rem;
+  color: rgb(15, 128, 24);
+}
+.shoeRecBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.shoeRecInput {
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  left: 1rem;
 }
 .button {
   color: rgb(250, 248, 248);
@@ -29,6 +42,7 @@ h2 {
 }
 .rec {
   visibility: visible;
+  color: rgb(255, 60, 0);
 }
 .notRec {
   visibility: hidden;

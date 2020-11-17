@@ -28,15 +28,11 @@ export const getTopRecommendedShoes = () => {
     durable_miles: shoe.durable_miles
   })));
 }
-export const getAthleteRecommendedShoe = (athlete_id) => {
+export const getAthleteRecommendedShoeID = (athlete_id) => {
   return fetch(`https://salty-cliffs-60245.herokuapp.com/recathleteshoes/${athlete_id}`)
   .then(res => res.json())
-  .then(json => json.map(shoe => ({
-    id: shoe.id,
-    avg_stars: shoe.avg_stars.toFixed(2),
-    shoes_id: shoe.shoes_id,
-    model: shoe.model,
-    terrain: shoe.terrain,
-    durable_miles: shoe.durable_miles
-  })));
 };
+export const getRecShoe = (shoe_id) => {
+  return fetch(`https://salty-cliffs-60245.herokuapp.com/getrecshoe/${shoe_id}`)
+  .then(res => res.json())
+}
