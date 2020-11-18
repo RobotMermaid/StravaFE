@@ -34,6 +34,7 @@ const Rating = () => {
     'Nike Pegasus'
   ];
   const athletes = [
+    '',
     1,
     2,
     3
@@ -61,7 +62,7 @@ const Rating = () => {
   const handleMenuAthClick = (event, index) => {
     setSelectedAthIndex(index);
     setAthleteel(null);
-    setAthleteID(index+1)
+    setAthleteID(index)
   };
 
   const handleAthClose = () => {
