@@ -32,10 +32,13 @@ const Recommendation = () => {
         <h1>Get a shoe recommendation</h1>
         <p>For testing use Athlete Id of 1, 2 or 3</p>
         <form className={styles.shoeRecInput}>
-          <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
+          <div>
+            <p>Enter Athlete Id</p>
+            <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
+          </div>
           <button className={styles.button} onClick={(e) => { e.preventDefault(); getRecommendation();}}>Get your Recommended Shoe</button>
         </form>
-        <div className={styles.rec}>
+        <div className={rec ? styles.rec : styles.notRec}>
           <h2>We recommend</h2>
           {shoesList}
         </div>

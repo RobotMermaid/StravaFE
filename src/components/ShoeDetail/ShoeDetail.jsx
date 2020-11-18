@@ -1,12 +1,13 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 import findShoeImg from '../Services/shoeImg';
+import styles from './ShoeDetail.css';
 
 const ShoeDetail = ({ model, terrain, durable_miles, avg_stars, shoes_id, img_src }) =>  {
   let img = findShoeImg(img_src);
 
   return (
-  <section>
+  <section className={styles.section}>
     <h3>{model}</h3>
     <img src={img} />
     <p>Best for running on {terrain}</p>
