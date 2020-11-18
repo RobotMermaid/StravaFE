@@ -89,7 +89,6 @@ const Rating = () => {
     <div className={styles.Rating}>
       <h1 className={styles.h1}>Rate a shoe</h1>
       <form>
-      {/* <div className={styles.inputs}> */}
       <List component="nav" aria-label="">
         <ListItem
           button
@@ -119,7 +118,6 @@ const Rating = () => {
           </MenuItem>
         ))}
       </Menu>
-    {/* </div> */}
       <div className={styles.inputs}>
       <img src={img} />
         <List component="nav" aria-label="Shoes">
