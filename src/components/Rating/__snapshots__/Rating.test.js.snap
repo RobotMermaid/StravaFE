@@ -1,32 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `
+exports[`Rating component renders Rating 1`] = `
 <DocumentFragment>
-  <div
-    class="Header"
-  >
-    <h1
-      class="h1"
-    >
-      STRAVA
-    </h1>
-    <div
-      class="Links"
-    >
-      <a
-        class="link"
-        href="/"
-      >
-        Rate a shoe
-      </a>
-      <a
-        class="link"
-        href="/rec"
-      >
-        Get shoe recommendation
-      </a>
-    </div>
-  </div>
   <div
     class="Rating"
   >

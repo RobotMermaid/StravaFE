@@ -4,8 +4,9 @@ exports[`Shoe Detail component renders Shoe Detail 1`] = `
 <DocumentFragment>
   <section>
     <h3 />
+    <img />
     <p>
-      Best for: 
+      Best for running on 
     </p>
     <p>
       Rating:  stars

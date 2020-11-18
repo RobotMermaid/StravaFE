@@ -9,20 +9,20 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { rateShoe } from '../Services/API';
-import img from '../../Assets/salomon_supercross.png';
 import findShoeImg from '../Services/shoeImg';
 
 const Rating = () => {
-  const [athleteID, setAthleteID] = useState(null);
+  const [athleteID, setAthleteID] = useState(0);
   const [shoeID, setShoeID] = useState(0);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [anchorEl, setAnchorEl] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(1);
 
-  const [stars, setStars] = React.useState(2);
-  const [hover, setHover] = React.useState(-1);
+  const [stars, setStars] = useState(2);
+  const [hover, setHover] = useState(-1);
   const [rated, setRated] = useState(false);
-  // let img = findShoeImg(options[selectedIndex]);
-let img;
+  
+  let img;
+  
   const options = [
     'Nike Zoom',
     'Altra Lone Peak',
@@ -50,7 +50,7 @@ let img;
   const saveRating = () => {
     rateShoe({athleteID, shoeID, stars})
     setRated(!rated)
-    console.log(stars, shoeID, athleteID)
+    console.log(athleteID, shoeID, stars)
   }
   const labels = {
     0.5: 'Useless',
@@ -69,7 +69,9 @@ let img;
       <h1 className={styles.h1}>Rate a shoe</h1>
       <p>For testing use Athlete Id of 1, 2 or 3</p>
       <form>
+        {/* <p>Enter Athlete Id</p> */}
       <input data-testid="athleteID"
+      text="athleteID"
       type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
       <div className={styles.inputs}>
       <img src={img} />
@@ -118,7 +120,6 @@ let img;
       />
       {stars !== null && <Box ml={2}>{labels[hover !== -1 ? hover : stars]}</Box>}
     </div>
-      {/* <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button> */}
     </form>
     <button className={styles.button} onClick={(e) => {e.preventDefault(); saveRating()}}>Submit your rating</button>
       <h3 className={rated ? styles.rated : styles.notRated }>Thank you for rating {options[selectedIndex]}</h3>

@@ -5,7 +5,7 @@ import ShoeDetail from '../ShoeDetail/ShoeDetail';
 import { getAthleteRecommendedShoe } from '../Services/API';
 
 const Recommendation = () => {
-  const [athleteID, setAthleteID] = useState(null);
+  const [athleteID, setAthleteID] = useState(0);
   const [recShoe, setRecShoe] = useState([]);
   const [rec, setRec] = useState(false);
 
@@ -30,13 +30,13 @@ const Recommendation = () => {
       <List/>
       <div className={styles.shoeRecBox}>
         <h1>Get a shoe recommendation</h1>
+        <p>For testing use Athlete Id of 1, 2 or 3</p>
         <form className={styles.shoeRecInput}>
           <input type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
-          <button className={styles.button} onClick={(e) => { e.preventDefault(); getRecommendation(); console.log("recShoe: ",recShoe)}}>Get your Recommended Shoe</button>
+          <button className={styles.button} onClick={(e) => { e.preventDefault(); getRecommendation();}}>Get your Recommended Shoe</button>
         </form>
         <div className={styles.rec}>
           <h2>We recommend</h2>
-          {/* <h2>{recShoe}</h2> */}
           {shoesList}
         </div>
       </div>
