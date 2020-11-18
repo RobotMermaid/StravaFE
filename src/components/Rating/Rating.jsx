@@ -15,7 +15,8 @@ const Rating = () => {
   const [shoes_id, setshoes_id] = useState(0);
   const [anchorEl, setAnchorEl] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(1);
-
+  const [athleteel, setAthleteel] = useState(null);
+  const [selectedAthIndex, setSelectedAthIndex] = useState(1);
   const [stars, setStars] = useState(2);
   const [hover, setHover] = useState(-1);
   const [rated, setRated] = useState(false);
@@ -32,6 +33,11 @@ const Rating = () => {
     'Salomon Ultra Pro',
     'Nike Pegasus'
   ];
+  const athletes = [
+    1,
+    2,
+    3
+  ]
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -41,12 +47,26 @@ const Rating = () => {
     setSelectedIndex(index);
     setAnchorEl(null);
   };
+  
   img = findShoeImg(options[selectedIndex]);
 
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleClickAthItem = (event) => {
+    setAthleteel(event.currentTarget);
+    
+  };
 
+  const handleMenuAthClick = (event, index) => {
+    setSelectedAthIndex(index);
+    setAthleteel(null);
+    setAthleteID(index+1)
+  };
+
+  const handleAthClose = () => {
+    setAthleteel(null);
+  };
   const saveRating = () => {
     console.log({athlete_id, shoes_id, stars})
     let athletes_id = parseInt(athlete_id)
@@ -68,22 +88,46 @@ const Rating = () => {
   return (
     <div className={styles.Rating}>
       <h1 className={styles.h1}>Rate a shoe</h1>
-      <p>For testing use Athlete Id of 1, 2 or 3</p>
       <form>
-      <div>
-        <p>Enter Athlete Id</p>
-        <input data-testid="athleteID"
-        text="athleteID"
-        type="text" value={athlete_id} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
-      </div>
+      {/* <div className={styles.inputs}> */}
+      <List component="nav" aria-label="">
+        <ListItem
+          button
+          aria-haspopup="true"
+          aria-controls="athmenu"
+          aria-label="athletes"
+          onClick={handleClickAthItem}
+        >
+          <ListItemText primary="Select Athlete Id" secondary={athletes[selectedAthIndex]} />
+        </ListItem>
+      </List>
+      <Menu
+        id="athmenu"
+        anchorEl={athleteel}
+        keepMounted
+        open={Boolean(athleteel)}
+        onClose={handleAthClose}
+      >
+        {athletes.map((option, index) => (
+          <MenuItem
+            key={option}
+            disabled={index === 0}
+            selected={index === selectedAthIndex}
+            onClick={(event) => handleMenuAthClick(event, index)}
+          >
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    {/* </div> */}
       <div className={styles.inputs}>
       <img src={img} />
         <List component="nav" aria-label="Shoes">
         <ListItem
           button
           aria-haspopup="true"
-          aria-controls="lock-menu"
-          aria-label="when device is locked"
+          aria-controls="menu"
+          aria-label="athletes"
           onClick={handleClickListItem}
         >
           <ListItemText primary="Select a shoe to rate" secondary={options[selectedIndex]} />

@@ -45,6 +45,9 @@ input {
 .rec {
   visibility: visible;
   color: rgb(255, 60, 0);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .notRec {
   visibility: hidden;
