@@ -14,13 +14,18 @@ exports[`Rating component renders Rating 1`] = `
       For testing use Athlete Id of 1, 2 or 3
     </p>
     <form>
-      <input
-        data-testid="athleteID"
-        placeholder="Your Athlete ID"
-        text="athleteID"
-        type="text"
-        value=""
-      />
+      <div>
+        <p>
+          Enter Athlete Id
+        </p>
+        <input
+          data-testid="athleteID"
+          placeholder="Your Athlete ID"
+          text="athleteID"
+          type="text"
+          value="0"
+        />
+      </div>
       <div
         class="inputs"
       >

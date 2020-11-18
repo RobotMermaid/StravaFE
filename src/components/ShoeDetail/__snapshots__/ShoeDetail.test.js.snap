@@ -2,7 +2,9 @@
 
 exports[`Shoe Detail component renders Shoe Detail 1`] = `
 <DocumentFragment>
-  <section>
+  <section
+    class="section"
+  >
     <h3 />
     <img />
     <p>

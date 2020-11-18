@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Rating.css';
-import { makeStyles } from '@material-ui/core/styles';
 import RatingMU from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
@@ -12,8 +11,8 @@ import { rateShoe } from '../Services/API';
 import findShoeImg from '../Services/shoeImg';
 
 const Rating = () => {
-  const [athleteID, setAthleteID] = useState(0);
-  const [shoeID, setShoeID] = useState(0);
+  const [athlete_id, setAthleteID] = useState(0);
+  const [shoes_id, setshoes_id] = useState(0);
   const [anchorEl, setAnchorEl] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(1);
 
@@ -24,6 +23,7 @@ const Rating = () => {
   let img;
   
   const options = [
+    '',
     'Nike Zoom',
     'Altra Lone Peak',
     'Brooks Ghost',
@@ -37,7 +37,7 @@ const Rating = () => {
   };
 
   const handleMenuItemClick = (event, index) => {
-    setShoeID(index+1)
+    setshoes_id(index)
     setSelectedIndex(index);
     setAnchorEl(null);
   };
@@ -48,9 +48,10 @@ const Rating = () => {
   };
 
   const saveRating = () => {
-    rateShoe({athleteID, shoeID, stars})
+    console.log({athlete_id, shoes_id, stars})
+    let athletes_id = parseInt(athlete_id)
+    rateShoe({athletes_id, shoes_id, stars})
     setRated(!rated)
-    console.log(athleteID, shoeID, stars)
   }
   const labels = {
     0.5: 'Useless',
@@ -73,7 +74,7 @@ const Rating = () => {
         <p>Enter Athlete Id</p>
         <input data-testid="athleteID"
         text="athleteID"
-        type="text" value={athleteID} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
+        type="text" value={athlete_id} onChange={({ target }) => setAthleteID(target.value)} placeholder="Your Athlete ID"/>
       </div>
       <div className={styles.inputs}>
       <img src={img} />

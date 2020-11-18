@@ -31,13 +31,13 @@ const List = () => {
 
 List.propTypes = {
   shoes: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    allies: PropTypes.string.isRequired,
-    affiliation: PropTypes.string.isRequired,
+    id: PropTypes.number,
+    name: PropTypes.string,
+    allies: PropTypes.string,
+    affiliation: PropTypes.string,
     enemies: PropTypes.string,
-    image: PropTypes.string.isRequired,
-  })).isRequired
+    image: PropTypes.string,
+  }))
 };
 
 export default List;
