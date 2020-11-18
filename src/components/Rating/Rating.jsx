@@ -35,6 +35,7 @@ const Rating = () => {
   ];
   const athletes = [
     '',
+    '',
     1,
     2,
     3
@@ -62,7 +63,7 @@ const Rating = () => {
   const handleMenuAthClick = (event, index) => {
     setSelectedAthIndex(index);
     setAthleteel(null);
-    setAthleteID(index)
+    setAthleteID(index-1)
   };
 
   const handleAthClose = () => {
